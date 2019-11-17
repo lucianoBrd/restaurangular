@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,11 +15,13 @@ import { ReserveComponent } from './reserve/reserve.component';
 import { ContactComponent } from './contact/contact.component';
 import { MainDashComponent } from './main-dash/main-dash.component';
 import { MainTableComponent } from './main-table/main-table.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'carte', component: CarteComponent },
   { path: 'reserve', component: ReserveComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'contact', component: ContactComponent }
 ];
 
@@ -31,7 +34,8 @@ const routes: Routes = [
     ReserveComponent,
     ContactComponent,
     MainDashComponent,
-    MainTableComponent
+    MainTableComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    HttpClientModule,
     MatGridListModule,
     MatMenuModule,
     MatTableModule,
